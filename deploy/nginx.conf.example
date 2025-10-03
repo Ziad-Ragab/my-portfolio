@@ -1,0 +1,22 @@
+server {
+  listen 80;
+  server_name example.com;
+  root /var/www/portfolio;
+  index index.html;
+
+  # Compression
+  gzip on;
+  gzip_comp_level 5;
+  gzip_min_length 1024;
+  gzip_types text/plain text/css application/javascript application/json image/svg+xml;
+
+  # Brotli (if module available)
+  # brotli on;
+  # brotli_comp_level 5;
+  # brotli_types text/plain text/css application/javascript application/json image/svg+xml;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}
+
