@@ -6,29 +6,31 @@
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#07111f">
 
-  <title>Ziad Ragab Atef | Full Stack .NET Developer</title>
-  <meta name="description" content="Full Stack .NET Developer building secure, maintainable enterprise applications with .NET, ABP Framework, Blazor, Angular, and SQL Server.">
+  <title data-i18n-content="meta.title">Ziad Ragab Atef | Full Stack .NET Developer</title>
+  <meta name="description" content="Full Stack .NET Developer building secure, maintainable enterprise applications with .NET, ABP Framework, Blazor, Angular, and SQL Server." data-i18n-content="meta.description">
   <meta name="author" content="Ziad Ragab Atef">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ziad-ragab.github.io/my-portfolio/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ziad-ragab.github.io/my-portfolio/">
-  <meta property="og:title" content="Ziad Ragab Atef | Full Stack .NET Developer">
-  <meta property="og:description" content="Reliable enterprise software, from business workflows and secure APIs to polished responsive interfaces.">
+  <meta property="og:title" content="Ziad Ragab Atef | Full Stack .NET Developer" data-i18n-content="meta.title">
+  <meta property="og:description" content="Reliable enterprise software, from business workflows and secure APIs to polished responsive interfaces." data-i18n-content="meta.socialDescription">
   <meta property="og:image" content="https://ziad-ragab.github.io/my-portfolio/assets/og.png">
-  <meta property="og:image:alt" content="Ziad Ragab Atef, Full Stack .NET Developer">
+  <meta property="og:image:alt" content="Ziad Ragab Atef, Full Stack .NET Developer" data-i18n-content="meta.imageAlt">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ziad Ragab Atef | Full Stack .NET Developer">
-  <meta name="twitter:description" content="Reliable enterprise software, from business workflows and secure APIs to polished responsive interfaces.">
+  <meta name="twitter:title" content="Ziad Ragab Atef | Full Stack .NET Developer" data-i18n-content="meta.title">
+  <meta name="twitter:description" content="Reliable enterprise software, from business workflows and secure APIs to polished responsive interfaces." data-i18n-content="meta.socialDescription">
   <meta name="twitter:image" content="https://ziad-ragab.github.io/my-portfolio/assets/og.png">
 
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="preload" as="image" href="assets/myPhoto.jpg" type="image/jpeg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260722">
-  <script src="script.js?v=20260722" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260722-8">
+  <script src="script.js?v=20260722-8" defer></script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
   <script type="application/ld+json">
   {
@@ -53,7 +55,7 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
 
   <header class="site-header" id="site-header">
     <div class="shell header-inner">
@@ -61,28 +63,32 @@
         <img class="brand-mark" src="assets/brand-logo.png" alt="" width="52" height="52" aria-hidden="true">
         <span class="brand-copy">
           <strong>Ziad Ragab</strong>
-          <span>Full Stack .NET Developer</span>
+          <span data-i18n="brand.role">Full Stack .NET Developer</span>
         </span>
       </a>
 
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
-        <span class="sr-only">Open navigation</span>
+        <span class="sr-only" data-i18n="a11y.openNav">Open navigation</span>
       </button>
 
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#experience">Experience</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact">Contact</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#journey" data-i18n="nav.journey">Journey</a>
+        <a href="#approach" data-i18n="nav.approach">Approach</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to Arabic" aria-pressed="false">
+          <span aria-hidden="true">ع</span><span class="sr-only" data-i18n="language.switch">Switch to Arabic</span>
+        </button>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true">◐</span>
         </button>
-        <a class="header-cta" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer">Start a project <span aria-hidden="true">↗</span></a>
+        <a class="header-cta" data-contact="whatsapp" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer"><span data-i18n="actions.startProject">Start a project</span> <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </header>
@@ -95,18 +101,18 @@
 
       <div class="shell hero-layout">
         <div class="hero-copy reveal">
-          <p class="availability"><span></span> Available for selected freelance projects</p>
-          <p class="eyebrow">Enterprise engineering · thoughtful execution</p>
-          <h1>I build reliable <span>business software</span> for real-world complexity.</h1>
-          <p class="hero-summary">Full Stack .NET Developer turning complex workflows into secure APIs, maintainable systems, and polished user experiences—without losing sight of the business behind the code.</p>
+          <p class="availability"><span class="availability-dot" aria-hidden="true"></span><span class="availability-text" data-i18n="hero.availability">Available for selected freelance projects</span></p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Enterprise engineering · thoughtful execution</p>
+          <h1 data-i18n-html="hero.title">I build reliable <span>business software</span> for real-world complexity.</h1>
+          <p class="hero-summary" data-i18n="hero.summary">Full Stack .NET Developer turning complex workflows into secure APIs, maintainable systems, and polished user experiences—without losing sight of the business behind the code.</p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer">Discuss your project <span aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="#work">Explore case studies <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" data-contact="whatsapp" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer"><span data-i18n="actions.discuss">Discuss your project</span> <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#work"><span data-i18n="actions.explore">Explore case studies</span> <span aria-hidden="true">↓</span></a>
           </div>
 
           <div class="hero-links" aria-label="Professional links">
-            <a href="assets/Ziad-Ragab-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+            <a href="assets/Ziad-Ragab-CV.pdf" download><span data-i18n="actions.downloadCv">Download CV</span> <span aria-hidden="true">↓</span></a>
             <a href="https://github.com/Ziad-Ragab" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
             <a href="https://www.linkedin.com/in/ziadragab" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
           </div>
@@ -115,25 +121,25 @@
         <div class="hero-visual reveal" data-delay="1">
           <div class="portrait-frame">
             <div class="portrait-accent" aria-hidden="true"></div>
-            <img src="assets/myPhoto.jpg" alt="Portrait of Ziad Ragab Atef" width="800" height="800">
+            <img src="assets/myPhoto.jpg" alt="Portrait of Ziad Ragab Atef" width="800" height="800" loading="eager" decoding="async" fetchpriority="high">
             <div class="portrait-caption">
               <span class="status-dot" aria-hidden="true"></span>
               <div>
-                <small>Currently</small>
-                <strong>Full Stack .NET Developer</strong>
+                <small data-i18n="hero.currently">Currently</small>
+                <strong data-i18n="brand.role">Full Stack .NET Developer</strong>
               </div>
             </div>
           </div>
-          <div class="visual-note note-top" aria-hidden="true"><span>01</span> Systems thinking</div>
-          <div class="visual-note note-bottom" aria-hidden="true"><span>02</span> Product-minded delivery</div>
+          <div class="visual-note note-top" aria-hidden="true"><span>01</span><b data-i18n="hero.systems">Systems thinking</b></div>
+          <div class="visual-note note-bottom" aria-hidden="true"><span>02</span><b data-i18n="hero.product">Product-minded delivery</b></div>
         </div>
       </div>
 
       <div class="shell proof-bar reveal" data-delay="2" aria-label="Professional strengths">
-        <div><span>Enterprise</span><strong>.NET experience</strong></div>
-        <div><span>End to end</span><strong>UI to database</strong></div>
-        <div><span>Built for trust</span><strong>Security &amp; permissions</strong></div>
-        <div><span>Global ready</span><strong>Arabic &amp; English UX</strong></div>
+        <div><span data-i18n="proof.enterprise">Enterprise</span><strong data-i18n="proof.dotnet">.NET experience</strong></div>
+        <div><span data-i18n="proof.endToEnd">End to end</span><strong data-i18n="proof.uiData">UI to database</strong></div>
+        <div><span data-i18n="proof.trust">Built for trust</span><strong data-i18n="proof.security">Security &amp; permissions</strong></div>
+        <div><span data-i18n="proof.global">Global ready</span><strong data-i18n="proof.languages">Arabic &amp; English UX</strong></div>
       </div>
     </section>
 
@@ -153,6 +159,9 @@
               <span class="case-index">01</span>
               <span class="case-status"><i aria-hidden="true"></i> Confidential enterprise work</span>
             </div>
+            <div class="case-visual case-visual-flow" aria-label="Workflow, documents, and delivery">
+              <span>Workflow</span><i aria-hidden="true"></i><span>Documents</span><i aria-hidden="true"></i><span>Delivery</span>
+            </div>
             <div class="case-layout">
               <div class="case-title">
                 <p class="case-type">Competition operations platform</p>
@@ -165,9 +174,14 @@
                   <div><span>Contribution</span><strong>Feature delivery across application layers</strong></div>
                   <div><span>Architecture</span><strong>Layered DDD monolith</strong></div>
                 </div>
+                <div class="case-outcome">
+                  <span>Business value</span>
+                  <p>Supports active operations with maintainable workflows and secure document capabilities.</p>
+                </div>
                 <ul class="tag-list" aria-label="Technologies used">
                   <li>.NET</li><li>ABP Framework</li><li>Blazor Server</li><li>EF Core</li><li>SQL Server</li>
                 </ul>
+                <a class="case-cta" data-case-contact="competition" href="https://wa.me/201062492696" target="_blank" rel="noreferrer"><span>Discuss a similar project</span><i aria-hidden="true">↗</i></a>
               </div>
             </div>
           </article>
@@ -177,14 +191,22 @@
               <span class="case-index">02</span>
               <span class="case-status"><i aria-hidden="true"></i> Anonymized case study</span>
             </div>
+            <div class="case-visual case-visual-flow case-visual-utility" aria-label="Meters, billing, and payments">
+              <span>Meters</span><i aria-hidden="true"></i><span>Billing</span><i aria-hidden="true"></i><span>Payments</span>
+            </div>
             <div class="case-title">
               <p class="case-type">Utility operations &amp; billing</p>
               <h3>One operational view across meters, contracts, rates, bills, and payments.</h3>
             </div>
             <p class="case-summary">Built a layered application with role-based permissions, responsive Arabic/English interfaces, data-rich dashboards, map navigation, and scheduled background maintenance.</p>
+            <div class="case-outcome">
+              <span>Business value</span>
+              <p>Gives operators a clearer bilingual view of connected billing and field operations.</p>
+            </div>
             <ul class="tag-list" aria-label="Technologies used">
               <li>.NET</li><li>ABP Framework</li><li>DevExpress</li><li>Background Workers</li><li>Localization</li>
             </ul>
+            <a class="case-cta" data-case-contact="utility" href="https://wa.me/201062492696" target="_blank" rel="noreferrer"><span>Discuss a similar project</span><i aria-hidden="true">↗</i></a>
           </article>
 
           <article class="case-card reveal" data-delay="1">
@@ -192,14 +214,22 @@
               <span class="case-index">03</span>
               <a class="case-link" href="https://github.com/Ziad-Ragab/ZiadBookStore" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
             </div>
+            <div class="case-visual case-visual-image" aria-hidden="true">
+              <img src="assets/projects/bookstore.svg" alt="" width="600" height="380" loading="lazy" decoding="async">
+            </div>
             <div class="case-title">
               <p class="case-type">Commerce &amp; order management</p>
               <h3>A complete bookstore journey, from product discovery to payment tracking.</h3>
             </div>
             <p class="case-summary">Developed catalog management, persistent carts, quantity pricing, Stripe Checkout, company payment workflows, image uploads, identity, and administrative order operations.</p>
+            <div class="case-outcome">
+              <span>Business value</span>
+              <p>Connects customer checkout with the administrative workflows needed to manage orders and payments.</p>
+            </div>
             <ul class="tag-list" aria-label="Technologies used">
               <li>ASP.NET Core MVC</li><li>EF Core</li><li>Stripe</li><li>Identity</li><li>Bootstrap</li>
             </ul>
+            <a class="case-cta" data-case-contact="commerce" href="https://wa.me/201062492696" target="_blank" rel="noreferrer"><span>Discuss a similar project</span><i aria-hidden="true">↗</i></a>
           </article>
         </div>
       </div>
@@ -357,8 +387,13 @@
         <p class="section-kicker">Start a conversation / 06</p>
         <h2>Have a complex workflow that needs a clear, reliable solution?</h2>
         <p>Tell me what you are building, where the friction is, and what success should look like. I will reply with practical next steps.</p>
+        <div class="contact-brief" aria-label="Project conversation guide">
+          <div><span>Best fit</span><strong>Enterprise workflows, internal tools, and commerce platforms</strong></div>
+          <div><span>Useful context</span><strong>Your goal, current friction, users, and preferred timeline</strong></div>
+          <div><span>Next step</span><strong>A practical reply with the clearest way forward</strong></div>
+        </div>
         <div class="contact-actions">
-          <a class="button button-primary button-large" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer">Message me on WhatsApp <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary button-large" data-contact="whatsapp" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer">Message me on WhatsApp <span aria-hidden="true">↗</span></a>
           <a class="button button-secondary button-large" href="mailto:ziadragab01@gmail.com?subject=Software%20project%20inquiry">Send an email <span aria-hidden="true">↗</span></a>
         </div>
         <div class="contact-details">
@@ -385,7 +420,7 @@
     </div>
   </footer>
 
-  <a class="floating-contact" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer" aria-label="Message Ziad on WhatsApp">
+  <a class="floating-contact" data-contact="whatsapp" href="https://wa.me/201062492696?text=Hi%20Ziad%2C%20I%27d%20like%20to%20discuss%20a%20software%20project." target="_blank" rel="noreferrer" aria-label="Message Ziad on WhatsApp">
     <span aria-hidden="true">↗</span><strong>Let's talk</strong>
   </a>
 </body>
