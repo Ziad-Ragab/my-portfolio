@@ -14,6 +14,7 @@
   const openGraphUrlMeta = document.querySelector('meta[property="og:url"]');
   const openGraphLocaleMeta = document.querySelector('meta[property="og:locale"]');
   const openGraphAlternateLocaleMeta = document.querySelector('meta[property="og:locale:alternate"]');
+  const personStructuredData = document.querySelector("#person-structured-data");
   const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -137,6 +138,21 @@
     openGraphUrlMeta?.setAttribute("content", publicUrl);
     openGraphLocaleMeta?.setAttribute("content", isArabic ? "ar_EG" : "en_US");
     openGraphAlternateLocaleMeta?.setAttribute("content", isArabic ? "en_US" : "ar_EG");
+
+    if (personStructuredData) {
+      try {
+        const profile = JSON.parse(personStructuredData.textContent);
+        profile.name = isArabic ? "زياد رجب عاطف" : "Ziad Ragab Atef";
+        profile.alternateName = isArabic ? "Ziad Ragab Atef" : "زياد رجب عاطف";
+        profile.jobTitle = isArabic ? "مطور Full Stack .NET" : "Full Stack .NET Developer";
+        profile.description = translations[language]["meta.description"];
+        profile.url = publicUrl;
+        profile.inLanguage = language;
+        personStructuredData.textContent = JSON.stringify(profile);
+      } catch {
+        // Keep the valid English server-rendered profile if structured data cannot be updated.
+      }
+    }
   };
 
   const translatePlainText = (language) => {
