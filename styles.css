@@ -1432,18 +1432,16 @@ h3 {
   }
 
   .header-inner {
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
-    gap: 12px;
+    grid-template-columns: auto 1fr auto;
   }
 
   .nav-toggle {
     display: inline-flex;
     flex-direction: column;
     gap: 4px;
-    grid-row: 1;
-    grid-column: 3;
+    align-items: center;
+    justify-content: center;
     justify-self: end;
-    align-self: center;
   }
 
   .nav-toggle > span:not(.sr-only) {
@@ -1506,8 +1504,7 @@ h3 {
 
   .header-actions {
     grid-row: 1;
-    grid-column: 4;
-    justify-self: end;
+    grid-column: 3;
   }
 
   .hero {
