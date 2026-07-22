@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-labelledby="title desc">
+  <title id="title">E-commerce storefront preview</title>
+  <desc id="desc">Energetic gradient depiction of an online storefront dashboard.</desc>
+  <defs>
+    <linearGradient id="ecoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f3c4b"/>
+      <stop offset="50%" stop-color="#092b36"/>
+      <stop offset="100%" stop-color="#041922"/>
+    </linearGradient>
+    <linearGradient id="ecoPulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#15f1c2" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#15f1c2" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0f3c4b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="32" fill="url(#ecoGradient)"/>
+  <rect x="94" y="104" width="412" height="204" rx="18" fill="#0d2430" stroke="#163d4b" stroke-width="2"/>
+  <rect x="126" y="134" width="104" height="132" rx="12" fill="#14d7ff" fill-opacity="0.35"/>
+  <rect x="246" y="134" width="120" height="132" rx="12" fill="#1fd9a6" fill-opacity="0.45"/>
+  <rect x="382" y="134" width="84" height="132" rx="12" fill="#15f1c2" fill-opacity="0.3"/>
+  <rect x="126" y="124" width="340" height="10" rx="5" fill="#15f1c2" fill-opacity="0.7"/>
+  <rect x="126" y="286" width="340" height="10" rx="5" fill="#103241"/>
+  <rect x="126" y="306" width="160" height="12" rx="6" fill="url(#ecoPulse)"/>
+  <circle cx="196" cy="188" r="18" fill="#ffffff" fill-opacity="0.8"/>
+  <path d="M188 188l6 6 12-12" fill="none" stroke="#0f3c4b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="86" fill="#c6f7ff" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="0.12em">E-COMMERCE</text>
+  <text x="120" y="112" fill="#9fd5e2" font-family="'Segoe UI', Arial, sans-serif" font-size="18" letter-spacing="0.26em">DASHBOARD</text>
+  <path d="M392 224h46l-12 32h-46z" fill="#15f1c2" fill-opacity="0.18" stroke="#15f1c2" stroke-width="2" stroke-linejoin="round"/>
+</svg>

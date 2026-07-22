@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud Development Certificate</title>
+  <desc id="desc">Modern teal and purple certificate design with abstract background.</desc>
+  <defs>
+    <linearGradient id="outer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3fbfb"/>
+      <stop offset="1" stop-color="#e6f4ff"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1fbcc5"/>
+      <stop offset="1" stop-color="#3a27b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="620" rx="32" fill="url(#outer)" stroke="#243d6a" stroke-width="4"/>
+  <rect x="54" y="54" width="772" height="512" rx="26" fill="#ffffff" stroke="#cad9ef" stroke-width="2"/>
+  <path d="M54 224c120-68 220-82 372-52s236-20 400-100v492H54z" fill="url(#wave)" opacity="0.12"/>
+  <text x="440" y="126" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="46" fill="#243d6a" font-weight="700" letter-spacing="0.2em">CERTIFICATE</text>
+  <text x="440" y="166" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#59729f" letter-spacing="0.4em">OF ACHIEVEMENT</text>
+  <text x="140" y="240" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#59729f">This is proudly presented to</text>
+  <text x="140" y="308" font-family="'Playfair Display', 'Times New Roman', serif" font-size="54" fill="#243d6a">Ziad Ragab</text>
+  <text x="140" y="364" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#59729f">For successfully completing advanced training in cloud-native web development,</text>
+  <text x="140" y="392" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#59729f">microservices, and deployment strategies using modern DevOps tooling.</text>
+  <g transform="translate(140 440)">
+    <line x1="0" y1="0" x2="220" y2="0" stroke="#9fb3d7" stroke-width="2" stroke-dasharray="5 9"/>
+    <text x="110" y="38" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#59729f">Program Director</text>
+  </g>
+  <g transform="translate(488 428)">
+    <rect x="0" y="0" width="240" height="156" rx="18" fill="#1fbcc5" opacity="0.9"/>
+    <rect x="16" y="18" width="208" height="120" rx="12" fill="#ffffff"/>
+    <text x="120" y="70" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="46" fill="#1fbcc5" font-weight="700">2025</text>
+    <text x="120" y="106" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#1fbcc5">Cloud Cohort</text>
+  </g>
+</svg>

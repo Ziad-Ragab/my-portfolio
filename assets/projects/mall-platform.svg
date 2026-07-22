@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-labelledby="title desc">
+  <title id="title">Multi-vendor Mall Platform preview</title>
+  <desc id="desc">Abstract gradient illustration with geometric storefront accents.</desc>
+  <defs>
+    <linearGradient id="baseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13365f"/>
+      <stop offset="55%" stop-color="#0d2238"/>
+      <stop offset="100%" stop-color="#071524"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#00e5ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#baseGradient)" rx="32"/>
+  <g opacity="0.55">
+    <circle cx="520" cy="86" r="72" fill="#00e5ff" fill-opacity="0.12"/>
+    <circle cx="520" cy="86" r="44" fill="#00e5ff" fill-opacity="0.18"/>
+  </g>
+  <g opacity="0.6" fill="#00e5ff">
+    <rect x="88" y="244" width="48" height="28" rx="6" fill-opacity="0.25"/>
+    <rect x="154" y="216" width="58" height="56" rx="10" fill-opacity="0.3"/>
+    <rect x="230" y="204" width="96" height="92" rx="14" fill-opacity="0.28"/>
+    <rect x="350" y="230" width="66" height="66" rx="12" fill-opacity="0.32"/>
+  </g>
+  <path d="M102 132h384c6.6 0 12 5.4 12 12v96c0 4.4-3.6 8-8 8H98c-4.4 0-8-3.6-8-8v-96c0-6.6 5.4-12 12-12z" fill="#0f1e2c" fill-opacity="0.85" stroke="#1e3a52" stroke-width="2"/>
+  <path d="M130 156h100" stroke="#00e5ff" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+  <path d="M130 188h80" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="M266 188h60" stroke="#4ecbf3" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <path d="M266 220h160" stroke="#2d9bf0" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  <path d="M130 220h100" stroke="#1878ff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <rect x="318" y="158" width="156" height="52" rx="12" fill="url(#pulse)"/>
+  <g fill="#00e5ff">
+    <rect x="142" y="108" width="12" height="12" rx="3" opacity="0.6"/>
+    <rect x="170" y="108" width="12" height="12" rx="3" opacity="0.5"/>
+    <rect x="198" y="108" width="12" height="12" rx="3" opacity="0.4"/>
+  </g>
+  <text x="120" y="96" fill="#f3fbff" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="0.08em">MALL PLATFORM</text>
+  <text x="120" y="128" fill="#b7d6f1" font-family="'Segoe UI', Arial, sans-serif" font-size="16" letter-spacing="0.22em">COMMERCE</text>
+</svg>

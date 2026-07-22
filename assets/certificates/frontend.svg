@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" role="img" aria-labelledby="title desc">
+  <title id="title">Frontend Training Certificate</title>
+  <desc id="desc">Elegant blue certificate layout with ribbon badge.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#e3eef9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a76d2"/>
+      <stop offset="1" stop-color="#0a3c75"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="620" rx="32" fill="url(#bg)" stroke="#0a3c75" stroke-width="4"/>
+  <rect x="46" y="46" width="788" height="528" rx="26" fill="#ffffff" stroke="#c6d8ee" stroke-width="2"/>
+  <path d="M46 170h788" stroke="#d7e6f8" stroke-width="2"/>
+  <text x="440" y="120" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="48" fill="#0a3c75" font-weight="700" letter-spacing="0.16em">CERTIFICATE</text>
+  <text x="440" y="164" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#48658a" letter-spacing="0.3em">OF COMPLETION</text>
+  <text x="132" y="240" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#48658a">Awarded to</text>
+  <text x="132" y="308" font-family="'Playfair Display', 'Times New Roman', serif" font-size="56" fill="#0a3c75">Ziad Ragab</text>
+  <text x="132" y="360" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#48658a" letter-spacing="0.08em">IN RECOGNITION OF COMPLETING THE FRONT-END ENGINEERING PROGRAM</text>
+  <text x="132" y="408" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#6c7f9d">Comprehensive training covering semantic HTML, modern CSS architectures, responsive layouts, accessibility, and component-driven UI development.</text>
+  <g transform="translate(132 460)">
+    <line x1="0" y1="0" x2="220" y2="0" stroke="#9db7dd" stroke-width="2" stroke-dasharray="6 10"/>
+    <text x="110" y="40" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#48658a">Head of Training</text>
+  </g>
+  <g transform="translate(528 440)">
+    <circle cx="92" cy="92" r="84" fill="url(#accent)" opacity="0.92"/>
+    <circle cx="92" cy="92" r="64" fill="#f7fbff"/>
+    <text x="92" y="104" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0a3c75" font-weight="700">2025</text>
+    <text x="92" y="140" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#48658a">FRONTEND COHORT</text>
+    <path d="M92 8l18 46 50 8-36 34 10 50-42-24-42 24 10-50-36-34 50-8z" fill="#1a76d2" opacity="0.55"/>
+  </g>
+</svg>
