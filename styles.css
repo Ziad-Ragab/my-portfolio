@@ -1352,6 +1352,20 @@ h3 {
   font-size: 0.62rem;
 }
 
+:root[data-theme="light"] .site-footer {
+  color: var(--muted-strong);
+  background: var(--surface);
+  border-top-color: var(--line);
+}
+
+:root[data-theme="light"] .footer-links a {
+  color: var(--muted-strong);
+}
+
+:root[data-theme="light"] .copyright {
+  color: var(--muted);
+}
+
 .floating-contact {
   position: fixed;
   z-index: 80;
