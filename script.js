@@ -9,6 +9,8 @@
   const navToggle = document.querySelector("#nav-toggle");
   const primaryNav = document.querySelector("#primary-nav");
   const floatingContact = document.querySelector(".floating-contact");
+  const shareButton = document.querySelector("#share-portfolio");
+  const shareStatus = document.querySelector("#share-status");
   const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
   const openGraphUrlMeta = document.querySelector('meta[property="og:url"]');
@@ -27,7 +29,8 @@
       "a11y.skip": "Skip to content", "a11y.openNav": "Open navigation", "a11y.closeNav": "Close navigation",
       "brand.role": "Full Stack .NET Developer", "language.switch": "Switch to Arabic",
       "nav.work": "Work", "nav.expertise": "Expertise", "nav.experience": "Experience", "nav.journey": "Journey", "nav.approach": "Approach", "nav.contact": "Contact",
-      "actions.startProject": "Start a project", "actions.discuss": "Discuss your project", "actions.explore": "Explore case studies", "actions.downloadCv": "Download CV",
+      "actions.startProject": "Start a project", "actions.discuss": "Discuss your project", "actions.explore": "Explore case studies", "actions.downloadCv": "Download CV", "actions.share": "Share portfolio",
+      "share.title": "Ziad Ragab | Full Stack .NET Developer", "share.text": "Explore my portfolio and selected full-stack .NET case studies.", "share.copied": "Portfolio link copied", "share.failed": "Could not copy the link",
       "hero.availability": "Available for selected freelance projects", "hero.eyebrow": "Enterprise engineering · thoughtful execution",
       "hero.title": "I build reliable <span>business software</span> for real-world complexity.",
       "hero.summary": "Full Stack .NET Developer turning complex workflows into secure APIs, maintainable systems, and polished user experiences—without losing sight of the business behind the code.",
@@ -43,7 +46,8 @@
       "a11y.skip": "انتقل إلى المحتوى", "a11y.openNav": "افتح قائمة التنقل", "a11y.closeNav": "أغلق قائمة التنقل",
       "brand.role": "مطور Full Stack .NET", "language.switch": "التبديل إلى الإنجليزية",
       "nav.work": "أعمالي", "nav.expertise": "خبراتي", "nav.experience": "الخبرة", "nav.journey": "رحلتي", "nav.approach": "منهجي", "nav.contact": "تواصل معي",
-      "actions.startProject": "ابدأ مشروعًا", "actions.discuss": "ناقش مشروعك", "actions.explore": "استكشف دراسات الحالة", "actions.downloadCv": "تحميل السيرة الذاتية بالإنجليزية",
+      "actions.startProject": "ابدأ مشروعًا", "actions.discuss": "ناقش مشروعك", "actions.explore": "استكشف دراسات الحالة", "actions.downloadCv": "تحميل السيرة الذاتية بالإنجليزية", "actions.share": "شارك ملف الأعمال",
+      "share.title": "زياد رجب | مطور Full Stack .NET", "share.text": "استكشف ملف أعمالي ودراسات حالة مختارة في تطوير Full Stack .NET.", "share.copied": "تم نسخ رابط ملف الأعمال", "share.failed": "تعذر نسخ الرابط",
       "hero.availability": "متاح لمشروعات عمل حر مختارة", "hero.eyebrow": "هندسة برمجيات مؤسسية · تنفيذ مدروس",
       "hero.title": "أبني <span>برمجيات أعمال</span> موثوقة للتعامل مع التعقيدات الواقعية.",
       "hero.summary": "مطور Full Stack .NET أحوّل إجراءات العمل المعقدة إلى واجهات API آمنة، وأنظمة سهلة الصيانة، وتجارب مستخدم متقنة—مع إبقاء أهداف العمل في صميم كل قرار.",
@@ -103,6 +107,7 @@
   }));
 
   let currentLanguage = "en";
+  let shareStatusTimer;
   const originalText = new WeakMap();
 
   const getSavedLanguage = () => {
@@ -196,6 +201,11 @@
     root.dir = currentLanguage === "ar" ? "rtl" : "ltr";
     root.dataset.language = currentLanguage;
     updateLanguageMetadata(currentLanguage);
+    if (shareStatus) {
+      window.clearTimeout(shareStatusTimer);
+      shareStatus.classList.remove("is-visible");
+      shareStatus.textContent = "";
+    }
     translatePlainText(currentLanguage);
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -304,6 +314,53 @@
 
   applyTheme(preferredTheme());
   applyLanguage(preferredLanguage());
+
+  const showShareStatus = (message) => {
+    if (!shareStatus) return;
+    window.clearTimeout(shareStatusTimer);
+    shareStatus.textContent = message;
+    shareStatus.classList.add("is-visible");
+    shareStatusTimer = window.setTimeout(() => shareStatus.classList.remove("is-visible"), 2600);
+  };
+
+  const copyShareUrl = async (url) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+        return true;
+      }
+    } catch {
+      // Continue to the browser-compatible copy fallback.
+    }
+
+    const input = document.createElement("textarea");
+    input.value = url;
+    input.setAttribute("readonly", "");
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch { /* Report the localized failure below. */ }
+    input.remove();
+    return copied;
+  };
+
+  shareButton?.addEventListener("click", async () => {
+    const dictionary = translations[currentLanguage];
+    const url = `https://ziad-ragab.github.io/my-portfolio/?lang=${currentLanguage}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: dictionary["share.title"], text: dictionary["share.text"], url });
+        return;
+      } catch (error) {
+        if (error?.name === "AbortError") return;
+      }
+    }
+
+    const copied = await copyShareUrl(url);
+    showShareStatus(dictionary[copied ? "share.copied" : "share.failed"]);
+  });
 
   languageToggle?.addEventListener("click", () => {
     const nextLanguage = currentLanguage === "ar" ? "en" : "ar";

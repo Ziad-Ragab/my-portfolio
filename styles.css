@@ -557,6 +557,7 @@ h3 {
 }
 
 .hero-links a,
+.hero-links button,
 .text-link,
 .case-link,
 .footer-links a {
@@ -569,10 +570,48 @@ h3 {
 }
 
 .hero-links a:hover,
+.hero-links button:hover,
 .text-link:hover,
 .case-link:hover,
 .footer-links a:hover {
   color: var(--accent);
+}
+
+.share-link {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.share-toast {
+  position: fixed;
+  z-index: 120;
+  right: 50%;
+  bottom: 24px;
+  max-width: min(420px, calc(100vw - 32px));
+  margin: 0;
+  padding: 11px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--surface-glass);
+  box-shadow: var(--shadow);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(50%, 12px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  backdrop-filter: blur(16px);
+}
+
+.share-toast.is-visible {
+  opacity: 1;
+  transform: translate(50%, 0);
 }
 
 .hero-visual {
