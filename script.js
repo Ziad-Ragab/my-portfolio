@@ -121,9 +121,7 @@
   }
 
   const navLinks = Array.from(document.querySelectorAll("#primary-nav a[href^='#']"));
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
+  const sections = Array.from(document.querySelectorAll("main section[id]"));
 
   if ("IntersectionObserver" in window && sections.length) {
     const sectionObserver = new IntersectionObserver((entries) => {
