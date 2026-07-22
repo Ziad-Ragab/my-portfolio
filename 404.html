@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07111f">
+  <meta name="robots" content="noindex, follow">
+  <title>Page not found | Ziad Ragab Atef</title>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      let language = new URLSearchParams(window.location.search).get("lang");
+      let theme;
+      try {
+        if (language !== "en" && language !== "ar") language = window.localStorage.getItem("portfolio-language");
+        theme = window.localStorage.getItem("portfolio-theme");
+      } catch {
+        language = null;
+        theme = null;
+      }
+      if (language !== "en" && language !== "ar") language = navigator.language?.toLowerCase().startsWith("ar") ? "ar" : "en";
+      if (theme !== "light" && theme !== "dark") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      root.lang = language;
+      root.dir = language === "ar" ? "rtl" : "ltr";
+      root.dataset.language = language;
+      root.dataset.theme = theme;
+      document.querySelector('meta[name="color-scheme"]')?.setAttribute("content", theme === "light" ? "light dark" : "dark light");
+      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#f5f8fc" : "#07111f");
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Arabic:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260722-10">
+  <style>
+    .error-page{min-height:100svh;display:grid;place-items:center;padding:32px;overflow:hidden;position:relative}
+    .error-page::before,.error-page::after{content:"";position:fixed;border-radius:50%;filter:blur(12px);pointer-events:none;opacity:.28}
+    .error-page::before{width:360px;height:360px;background:var(--accent);inset:-140px auto auto -120px}
+    .error-page::after{width:300px;height:300px;background:#21c4a8;inset:auto -120px -140px auto}
+    .error-shell{width:min(760px,100%);position:relative;z-index:1}
+    .error-brand{display:inline-flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;margin-bottom:32px}
+    .error-brand img{width:48px;height:48px;border-radius:14px}
+    .error-brand span{display:grid;line-height:1.2}
+    .error-brand small{color:var(--muted);font-size:.78rem;margin-top:4px}
+    .error-card{padding:clamp(30px,7vw,72px);border:1px solid var(--line);border-radius:30px;background:var(--surface);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .error-code{font-family:"DM Mono",monospace;color:var(--accent);font-size:clamp(4.8rem,18vw,9rem);font-weight:500;line-height:.85;letter-spacing:-.08em;margin:0 0 28px}
+    .error-card h1{font-size:clamp(2rem,6vw,3.7rem);line-height:1.05;max-width:650px;margin:0 0 18px}
+    .error-card p{color:var(--muted);font-size:clamp(1rem,2.4vw,1.14rem);line-height:1.8;max-width:600px;margin:0}
+    .error-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .error-note{font-family:"DM Mono",monospace;font-size:.72rem;color:var(--muted);margin-top:24px!important}
+    html[dir="rtl"] .error-page{font-family:"Noto Sans Arabic","Manrope",sans-serif}
+    html[dir="rtl"] .error-code{letter-spacing:0}
+    @media (max-width:540px){.error-page{padding:20px}.error-card{border-radius:24px}.error-actions{display:grid}.error-actions .button{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="error-page">
+    <div class="error-shell">
+      <a class="error-brand" data-home-link href="./?lang=en" aria-label="Ziad Ragab Atef, home">
+        <img src="assets/favicon.png" width="48" height="48" alt="" decoding="async">
+        <span><strong>Ziad Ragab</strong><small data-copy="role">Full Stack .NET Developer</small></span>
+      </a>
+
+      <section class="error-card" aria-labelledby="error-title">
+        <p class="error-code" aria-hidden="true">404</p>
+        <h1 id="error-title" data-copy="title">This page took a wrong turn.</h1>
+        <p data-copy="message">The link may be outdated or mistyped. The portfolio is still here, and you can get back to the work in one click.</p>
+        <div class="error-actions">
+          <a class="button button-primary" data-home-link href="./?lang=en"><span data-copy="home">Return to portfolio</span><span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" data-contact-link href="https://wa.me/201062492696"><span data-copy="contact">Contact me</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="error-note" data-copy="note">Error 404 · Page not found</p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const language = document.documentElement.lang === "ar" ? "ar" : "en";
+      const copy = {
+        en: {
+          title: "This page took a wrong turn.",
+          message: "The link may be outdated or mistyped. The portfolio is still here, and you can get back to the work in one click.",
+          home: "Return to portfolio", contact: "Contact me", note: "Error 404 · Page not found",
+          role: "Full Stack .NET Developer", pageTitle: "Page not found | Ziad Ragab Atef",
+          brandLabel: "Ziad Ragab Atef, home", whatsapp: "Hi Ziad, I reached a broken link on your portfolio and would like to contact you."
+        },
+        ar: {
+          title: "يبدو أن هذه الصفحة سلكت طريقًا خاطئًا.",
+          message: "قد يكون الرابط قديمًا أو مكتوبًا بشكل غير صحيح. ملف الأعمال ما زال متاحًا، ويمكنك العودة إليه بضغطة واحدة.",
+          home: "العودة إلى ملف الأعمال", contact: "تواصل معي", note: "خطأ 404 · الصفحة غير موجودة",
+          role: "مطور Full Stack .NET", pageTitle: "الصفحة غير موجودة | زياد رجب عاطف",
+          brandLabel: "زياد رجب عاطف، الرئيسية", whatsapp: "مرحبًا زياد، وصلت إلى رابط غير صالح في ملف أعمالك وأود التواصل معك."
+        }
+      }[language];
+      document.title = copy.pageTitle;
+      document.querySelectorAll("[data-copy]").forEach((element) => { element.textContent = copy[element.dataset.copy]; });
+      document.querySelector(".error-brand")?.setAttribute("aria-label", copy.brandLabel);
+      document.querySelectorAll("[data-home-link]").forEach((link) => { link.href = `./?lang=${language}`; });
+      const contact = document.querySelector("[data-contact-link]");
+      if (contact) contact.href = `https://wa.me/201062492696?text=${encodeURIComponent(copy.whatsapp)}`;
+    })();
+  </script>
+</body>
+</html>
