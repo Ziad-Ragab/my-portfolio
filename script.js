@@ -265,6 +265,7 @@
     document.querySelectorAll(".journey-media img").forEach((image, index) => { image.alt = journeyAlts[index]; });
     updateThemeLabel();
     updateNavLabel();
+    root.classList.remove("i18n-pending");
   };
 
   const getSavedTheme = () => {

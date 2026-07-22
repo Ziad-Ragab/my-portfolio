@@ -6,6 +6,25 @@
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#07111f">
 
+  <script>
+    (() => {
+      const root = document.documentElement;
+      let language = new URLSearchParams(window.location.search).get("lang");
+      if (language !== "en" && language !== "ar") {
+        try { language = window.localStorage.getItem("portfolio-language"); } catch { language = null; }
+      }
+      if (language !== "en" && language !== "ar") {
+        language = navigator.language?.toLowerCase().startsWith("ar") ? "ar" : "en";
+      }
+      root.lang = language;
+      root.dir = language === "ar" ? "rtl" : "ltr";
+      root.dataset.language = language;
+      root.classList.add("i18n-pending");
+      window.setTimeout(() => root.classList.remove("i18n-pending"), 3000);
+    })();
+  </script>
+  <style>html.i18n-pending body{visibility:hidden}</style>
+
   <title data-i18n-content="meta.title">Ziad Ragab Atef | Full Stack .NET Developer</title>
   <meta name="description" content="Full Stack .NET Developer building secure, maintainable enterprise applications with .NET, ABP Framework, Blazor, Angular, and SQL Server." data-i18n-content="meta.description">
   <meta name="author" content="Ziad Ragab Atef">
@@ -34,7 +53,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20260722-10">
-  <script src="script.js?v=20260722-11" defer></script>
+  <script src="script.js?v=20260722-12" defer></script>
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
   <script type="application/ld+json" id="person-structured-data">
