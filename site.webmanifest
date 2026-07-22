@@ -1,0 +1,28 @@
+{
+  "id": "./",
+  "name": "Ziad Ragab | Full Stack .NET Developer",
+  "short_name": "Ziad Ragab",
+  "description": "A bilingual portfolio showcasing reliable enterprise software, full-stack .NET engineering, and polished product delivery.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "categories": ["business", "productivity", "developer tools"],
+  "icons": [
+    {
+      "src": "assets/favicon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/brand-logo.png",
+      "sizes": "768x768",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
