@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Ragab Atef;Ziad;;;
+FN:Ziad Ragab Atef
+TITLE:Full Stack .NET Developer
+TEL;TYPE=CELL:+201062492696
+EMAIL;TYPE=INTERNET:ziadragab01@gmail.com
+URL;TYPE=Portfolio:https://ziad-ragab.github.io/my-portfolio/
+X-SOCIALPROFILE;TYPE=github:https://github.com/Ziad-Ragab
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/ziadragab
+NOTE:Full Stack .NET Developer building secure and maintainable enterprise applications. Arabic and English communication.
+REV:20260722T000000Z
+END:VCARD

@@ -29,7 +29,7 @@
       "a11y.skip": "Skip to content", "a11y.openNav": "Open navigation", "a11y.closeNav": "Close navigation",
       "brand.role": "Full Stack .NET Developer", "language.switch": "Switch to Arabic",
       "nav.work": "Work", "nav.expertise": "Expertise", "nav.experience": "Experience", "nav.journey": "Journey", "nav.approach": "Approach", "nav.contact": "Contact",
-      "actions.startProject": "Start a project", "actions.discuss": "Discuss your project", "actions.explore": "Explore case studies", "actions.downloadCv": "Download CV", "actions.share": "Share portfolio",
+      "actions.startProject": "Start a project", "actions.discuss": "Discuss your project", "actions.explore": "Explore case studies", "actions.downloadCv": "Download CV", "actions.share": "Share portfolio", "actions.saveContact": "Save contact",
       "share.title": "Ziad Ragab | Full Stack .NET Developer", "share.text": "Explore my portfolio and selected full-stack .NET case studies.", "share.copied": "Portfolio link copied", "share.failed": "Could not copy the link",
       "hero.availability": "Available for selected freelance projects", "hero.eyebrow": "Enterprise engineering · thoughtful execution",
       "hero.title": "I build reliable <span>business software</span> for real-world complexity.",
@@ -46,7 +46,7 @@
       "a11y.skip": "انتقل إلى المحتوى", "a11y.openNav": "افتح قائمة التنقل", "a11y.closeNav": "أغلق قائمة التنقل",
       "brand.role": "مطور Full Stack .NET", "language.switch": "التبديل إلى الإنجليزية",
       "nav.work": "أعمالي", "nav.expertise": "خبراتي", "nav.experience": "الخبرة", "nav.journey": "رحلتي", "nav.approach": "منهجي", "nav.contact": "تواصل معي",
-      "actions.startProject": "ابدأ مشروعًا", "actions.discuss": "ناقش مشروعك", "actions.explore": "استكشف دراسات الحالة", "actions.downloadCv": "تحميل السيرة الذاتية بالإنجليزية", "actions.share": "شارك ملف الأعمال",
+      "actions.startProject": "ابدأ مشروعًا", "actions.discuss": "ناقش مشروعك", "actions.explore": "استكشف دراسات الحالة", "actions.downloadCv": "تحميل السيرة الذاتية بالإنجليزية", "actions.share": "شارك ملف الأعمال", "actions.saveContact": "حفظ بيانات التواصل",
       "share.title": "زياد رجب | مطور Full Stack .NET", "share.text": "استكشف ملف أعمالي ودراسات حالة مختارة في تطوير Full Stack .NET.", "share.copied": "تم نسخ رابط ملف الأعمال", "share.failed": "تعذر نسخ الرابط",
       "hero.availability": "متاح لمشروعات عمل حر مختارة", "hero.eyebrow": "هندسة برمجيات مؤسسية · تنفيذ مدروس",
       "hero.title": "أبني <span>برمجيات أعمال</span> موثوقة للتعامل مع التعقيدات الواقعية.",
@@ -247,8 +247,13 @@
       const message = caseMessages[link.dataset.caseContact];
       if (message) link.href = `https://wa.me/201062492696?text=${encodeURIComponent(message)}`;
     });
-    const email = document.querySelector("a[href^='mailto:'][href*='subject=']");
-    if (email) email.href = `mailto:ziadragab01@gmail.com?subject=${encodeURIComponent(isArabic ? "استفسار عن مشروع برمجي" : "Software project inquiry")}`;
+    const emailSubject = isArabic ? "استفسار عن مشروع برمجي" : "Software project inquiry";
+    const emailBody = isArabic
+      ? `مرحبًا زياد،\n\nأود مناقشة مشروع برمجي معك.\n\nهدف المشروع أو العمل:\n\nالمستخدمون الأساسيون:\n\nإجراء العمل الحالي أو التحدي:\n\nالجدول الزمني المطلوب:\n\nنطاق الميزانية التقريبي (اختياري):\n\nروابط أو ملفات مفيدة:\n\nمع التحية،`
+      : `Hi Ziad,\n\nI'd like to discuss a software project with you.\n\nProject or business goal:\n\nPrimary users:\n\nCurrent workflow or challenge:\n\nDesired timeline:\n\nApproximate budget range (optional):\n\nRelevant links or files:\n\nBest,`;
+    document.querySelectorAll("[data-contact='email']").forEach((email) => {
+      email.href = `mailto:ziadragab01@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    });
     primaryNav?.setAttribute("aria-label", isArabic ? "التنقل الرئيسي" : "Primary navigation");
     document.querySelector(".hero-links")?.setAttribute("aria-label", isArabic ? "روابط مهنية" : "Professional links");
     document.querySelector(".proof-bar")?.setAttribute("aria-label", isArabic ? "نقاط القوة المهنية" : "Professional strengths");
