@@ -11,6 +11,9 @@
   const floatingContact = document.querySelector(".floating-contact");
   const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const openGraphUrlMeta = document.querySelector('meta[property="og:url"]');
+  const openGraphLocaleMeta = document.querySelector('meta[property="og:locale"]');
+  const openGraphAlternateLocaleMeta = document.querySelector('meta[property="og:locale:alternate"]');
   const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -109,10 +112,31 @@
     try { window.localStorage.setItem("portfolio-language", language); } catch { /* Applies for this visit. */ }
   };
 
+  const getUrlLanguage = () => {
+    const language = new URLSearchParams(window.location.search).get("lang");
+    return language === "en" || language === "ar" ? language : null;
+  };
+
   const preferredLanguage = () => {
+    const urlLanguage = getUrlLanguage();
+    if (urlLanguage) return urlLanguage;
     const saved = getSavedLanguage();
     if (saved === "en" || saved === "ar") return saved;
     return navigator.language?.toLowerCase().startsWith("ar") ? "ar" : "en";
+  };
+
+  const updateLanguageUrl = (language) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", language);
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+  };
+
+  const updateLanguageMetadata = (language) => {
+    const isArabic = language === "ar";
+    const publicUrl = `https://ziad-ragab.github.io/my-portfolio/?lang=${language}`;
+    openGraphUrlMeta?.setAttribute("content", publicUrl);
+    openGraphLocaleMeta?.setAttribute("content", isArabic ? "ar_EG" : "en_US");
+    openGraphAlternateLocaleMeta?.setAttribute("content", isArabic ? "en_US" : "ar_EG");
   };
 
   const translatePlainText = (language) => {
@@ -155,6 +179,7 @@
     root.lang = currentLanguage;
     root.dir = currentLanguage === "ar" ? "rtl" : "ltr";
     root.dataset.language = currentLanguage;
+    updateLanguageMetadata(currentLanguage);
     translatePlainText(currentLanguage);
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -266,6 +291,7 @@
   languageToggle?.addEventListener("click", () => {
     const nextLanguage = currentLanguage === "ar" ? "en" : "ar";
     saveLanguage(nextLanguage);
+    updateLanguageUrl(nextLanguage);
     applyLanguage(nextLanguage);
     closeNav();
   });
